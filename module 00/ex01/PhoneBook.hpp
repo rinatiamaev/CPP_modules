@@ -6,7 +6,7 @@
 #include <iostream>
 #include <iomanip>
 
-#define WEIGHT 10
+#define WIDTH 10
 #define MAX_CONTACT 8
 
 class PhoneBook {
@@ -22,6 +22,7 @@ public:
     void displayContact();
     void displayContactDetails(int index);
     bool isNumber(const std::string& str);
+    void takeInput();
 };
 
 #endif
