@@ -11,7 +11,7 @@ OBJS = $(addprefix $(OBJSDIR)/,$(SRCS:.cpp=.o))
 all: $(TARGET)
 
 $(OBJSDIR):
-	mkdir -p $(OBJSDIR)
+	mkdir $(OBJSDIR)
 
 $(TARGET): $(OBJSDIR) $(OBJS)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
