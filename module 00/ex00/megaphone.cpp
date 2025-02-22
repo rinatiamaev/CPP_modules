@@ -15,15 +15,19 @@
 
 void GetStrings(int ac, char **av)
 {
-	for (int i = 1; i < ac; i++)
-	{
-		std::string str = av[i];
-		for (int j = 0; j < (int)str.length(); j++)
-		{
-			str[j] = std::toupper(str[j]);
-		}
-		std::cout << str;
-	}
+    for (int i = 1; i < ac; i++)
+    {
+        std::string str = av[i];
+        for (int j = 0; j < (int)str.length(); j++)
+        {
+            str[j] = std::toupper(str[j]);
+        }
+        std::cout << str;
+        if (i < ac - 1)
+        {
+            std::cout << " ";
+        }
+    }
 }
 
 int main(int ac, char **av)
