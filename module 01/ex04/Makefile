@@ -16,7 +16,7 @@ $(OBJSDIR):
 $(TARGET): $(OBJSDIR) $(OBJS)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
 
-$(OBJSDIR)/%.o: %.cpp
+$(OBJSDIR)/%.o: %.cpp $(INCLUDES)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

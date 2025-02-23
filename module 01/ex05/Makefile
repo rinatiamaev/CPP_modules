@@ -1,9 +1,9 @@
 CC = g++
 CFLAGS = -Wall -Wextra -Werror
-TARGET = violence
+TARGET = Harl
 
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-INCLUDES = Weapon.hpp HumanA.hpp HumanB.hpp
+SRCS = main.cpp Harl.cpp
+INCLUDES = Harl.hpp
 
 OBJSDIR = objects
 OBJS = $(addprefix $(OBJSDIR)/,$(SRCS:.cpp=.o))
