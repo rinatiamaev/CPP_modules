@@ -166,9 +166,7 @@ void PhoneBook::takeInput() {
 
         }
         else if (command == "EXIT" || command == "exit")
-        {
             break ;
-        }
         else
             std::cout << "Invalid command. Please type ADD, SEARCH, or EXIT.\n";
     }
