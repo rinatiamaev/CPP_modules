@@ -3,7 +3,7 @@
 void Zombie::setZombieName(const std::string& name){
     this->name = name;
 }
-std::string Zombie::getFirstName(){
+std::string Zombie::getZombieName(){
     return name;
 }
 void Zombie::announce(){
