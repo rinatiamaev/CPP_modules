@@ -6,13 +6,13 @@ Fixed::Fixed():fix_point(0){
 
 Fixed::Fixed(const Fixed& other){
     std::cout<<"Copy constructor called\n";
-    this->fix_point = other.fix_point;
+    this->fix_point = other.getRawBits();
 }
 
 Fixed& Fixed::operator=(const Fixed& other){
     std::cout<<"Copy assignment operator called\n";
     if (this != &other)
-        this->fix_point = other.fix_point;
+        this->fix_point = other.getRawBits();
     return (*this);
 }
 
