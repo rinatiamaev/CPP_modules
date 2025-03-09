@@ -5,20 +5,22 @@
 #include <string>
 
 class ClapTrap {
-private:
+protected:
     std::string name;
     int hitPoints;
     int energyPoints;
     int attackDamage;
 
 public:
-    ClapTrap();
-    ClapTrap(std::string name);
-    ClapTrap(const ClapTrap& other);
-    ClapTrap& operator=(const ClapTrap& other);
-    ~ClapTrap();
+    // Orthodox Canonical Form
+    ClapTrap();                            // Default Constructor
+    ClapTrap(std::string name);            // Parameterized Constructor
+    ClapTrap(const ClapTrap& other);       // Copy Constructor
+    ClapTrap& operator=(const ClapTrap& other); // Copy Assignment Operator
+    virtual ~ClapTrap();                   // Virtual Destructor for inheritance
 
-    void attack(const std::string& target);
+    // Member Functions
+    virtual void attack(const std::string& target);  // Virtual to allow overriding
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 };

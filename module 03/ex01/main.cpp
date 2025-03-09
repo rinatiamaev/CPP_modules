@@ -1,17 +1,12 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
-    ClapTrap claptrap1("Dart Wader");
-    ClapTrap claptrap2 = claptrap1;
-    ClapTrap claptrap3;
-    claptrap3 = claptrap1;
-
-    claptrap1.attack("Joda");
-    claptrap1.takeDamage(5);
-    claptrap1.beRepaired(3);
-    claptrap1.takeDamage(10);
-    claptrap1.attack("Han Solo");
-    claptrap1.beRepaired(5);
+    ScavTrap scavtrap("Han Solo");
+    scavtrap.attack("Dart wader");
+    scavtrap.takeDamage(5);
+    scavtrap.beRepaired(7);
+    scavtrap.guardGate();
 
     return 0;
 }
