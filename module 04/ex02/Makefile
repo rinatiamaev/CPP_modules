@@ -2,8 +2,8 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror
 TARGET = WorldOnFire
 
-SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
-INCLUDES = Dog.hpp Cat.hpp Animal.hpp Brain.hpp
+SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp AAnimal.cpp
+INCLUDES = Dog.hpp Cat.hpp Animal.hpp Brain.hpp AAnimal.hpp
 
 OBJSDIR = objects
 OBJS = $(addprefix $(OBJSDIR)/,$(SRCS:.cpp=.o))
