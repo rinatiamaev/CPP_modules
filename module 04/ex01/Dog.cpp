@@ -1,26 +1,35 @@
 #include "Dog.hpp"
 
 Dog::Dog() {
-    type = "Dog";
-    std::cout << "Dog Constructor called!" << std::endl;
+	type = "Dog";
+	brain = new Brain();
+	std::cout << "Dog Constructor called!" << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal(other) {
-    std::cout << "Dog Copy Constructor called!" << std::endl;
+	brain = new Brain(*other.brain);
+	std::cout << "Dog Copy Constructor called!" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other) {
-    std::cout << "Dog Copy Assignment Operator called!" << std::endl;
-    if (this != &other) {
-        Animal::operator=(other);
-    }
-    return *this;
+	std::cout << "Dog Copy Assignment Operator called!" << std::endl;
+	if (this != &other) {
+		Animal::operator=(other);
+		delete brain;
+		brain = new Brain(*other.brain);
+	}
+	return *this;
 }
 
 Dog::~Dog() {
-    std::cout << "Dog Destructor called!" << std::endl;
+	delete brain;
+	std::cout << "Dog Destructor called!" << std::endl;
 }
 
 void Dog::makeSound() const {
-    std::cout << "GAV! GAV!" << std::endl;
+	std::cout << "GAV! GAV!" << std::endl;
+}
+
+Brain* Dog::getBrain() const {
+	return brain;
 }

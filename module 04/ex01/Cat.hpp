@@ -2,15 +2,20 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal {
-public:
-    Cat();
-    Cat(const Cat& other);
-    Cat& operator=(const Cat& other);
-    ~Cat();
+private:
+	Brain* brain;
 
-    void makeSound() const override;
+public:
+	Cat();
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& other);
+	~Cat();
+
+	void makeSound() const override;
+	Brain* getBrain() const;
 };
 
 #endif

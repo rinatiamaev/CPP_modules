@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
-TARGET = WorldOnFire
+TARGET = Abstract
 
 SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp AAnimal.cpp
 INCLUDES = Dog.hpp Cat.hpp Animal.hpp Brain.hpp AAnimal.hpp
