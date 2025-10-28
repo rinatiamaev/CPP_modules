@@ -8,16 +8,14 @@ private:
 	std::string _target;
 
 public:
-	PresidentialPardonForm();                                       // Default constructor
-	PresidentialPardonForm(const std::string& target);             // Parametric constructor
-	PresidentialPardonForm(const PresidentialPardonForm& other);   // Copy constructor
-	PresidentialPardonForm& operator=(const PresidentialPardonForm& other); // Copy assignment operator
-	virtual ~PresidentialPardonForm();                             // Destructor
+	PresidentialPardonForm();
+	PresidentialPardonForm(const std::string& target);
+	PresidentialPardonForm(const PresidentialPardonForm& other);
+	PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
+	virtual ~PresidentialPardonForm();
 
-	// Getter
 	const std::string& getTarget() const;
 
-	// Override the pure virtual function
 	virtual void executeAction() const override;
 };
 

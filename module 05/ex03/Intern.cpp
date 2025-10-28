@@ -20,7 +20,7 @@ Intern::Intern(const Intern& other) {
 
 Intern& Intern::operator=(const Intern& other) {
 	std::cout << "Intern copy assignment operator called" << std::endl;
-	(void)other; // Suppress unused parameter warning
+	(void)other;
 	return *this;
 }
 

@@ -10,16 +10,14 @@ private:
 	std::string _target;
 
 public:
-	RobotomyRequestForm();                                          // Default constructor
-	RobotomyRequestForm(const std::string& target);                // Parametric constructor
-	RobotomyRequestForm(const RobotomyRequestForm& other);         // Copy constructor
-	RobotomyRequestForm& operator=(const RobotomyRequestForm& other); // Copy assignment operator
-	virtual ~RobotomyRequestForm();                                // Destructor
+	RobotomyRequestForm();
+	RobotomyRequestForm(const std::string& target);
+	RobotomyRequestForm(const RobotomyRequestForm& other);
+	RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
+	virtual ~RobotomyRequestForm();
 
-	// Getter
 	const std::string& getTarget() const;
 
-	// Override the pure virtual function
 	virtual void executeAction() const override;
 };
 

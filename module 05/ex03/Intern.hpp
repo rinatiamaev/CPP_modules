@@ -26,15 +26,13 @@ private:
 	static AForm* createPresidentialPardonForm(const std::string& target);
 
 public:
-	Intern();                                              // Default constructor
-	Intern(const Intern& other);                           // Copy constructor
-	Intern& operator=(const Intern& other);                // Copy assignment operator
-	~Intern();                                             // Destructor
+	Intern();
+	Intern(const Intern& other);
+	Intern& operator=(const Intern& other);
+	~Intern();
 
-	// Main funct.
 	AForm* makeForm(const std::string& formName, const std::string& target);
 
-	// Exception class
 	class FormNotFoundException : public std::exception {
 	public:
 		virtual const char* what() const throw();

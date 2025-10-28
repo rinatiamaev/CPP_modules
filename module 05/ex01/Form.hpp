@@ -19,27 +19,22 @@ private:
 	static const int	LOWEST_GRADE = 150;
 
 public:
-	Form();                                                         // Default constructor
-	Form(const std::string& name, int gradeToSign, int gradeToExecute); // Parametric constructor
-	Form(const Form& other);                                        // Copy constructor
-	Form& operator=(const Form& other);                             // Copy assignment operator
-	~Form();                                                        // Destructor
+	Form();
+	Form(const std::string& name, int gradeToSign, int gradeToExecute);
+	Form(const Form& other);
+	Form& operator=(const Form& other);
+	~Form();
 
-	// Getters
 	const std::string&	getName() const;
 	bool				isSigned() const;
 	int					getGradeToSign() const;
 	int					getGradeToExecute() const;
 
-	// Member functions
 	void				beSigned(const Bureaucrat& bureaucrat);
-
-	// Exception classes
 	class GradeTooHighException : public std::exception {
 	public:
 		virtual const char* what() const throw();
 	};
-
 	class GradeTooLowException : public std::exception {
 	public:
 		virtual const char* what() const throw();
@@ -49,7 +44,6 @@ private:
 	void				_validateGrade(int grade);
 };
 
-// Insertion operator overload
 std::ostream& operator<<(std::ostream& out, const Form& form);
 
 #endif
