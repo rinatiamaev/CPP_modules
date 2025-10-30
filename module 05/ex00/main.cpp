@@ -5,11 +5,11 @@ void testBasicFunctionality() {
 	std::cout << "\n=== Testing Basic Functionality ===" << std::endl;
 	
 	try {
-		Bureaucrat john("Bobafet", 50);
-		std::cout << john << std::endl;
+		Bureaucrat bobafet("Bobafet", 50);
+		std::cout << bobafet << std::endl;
 		
-		std::cout << "Name: " << john.getName() << std::endl;
-		std::cout << "Grade: " << john.getGrade() << std::endl;
+		std::cout << "Name: " << bobafet.getName() << std::endl;
+		std::cout << "Grade: " << bobafet.getGrade() << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cout << "Exception caught: " << e.what() << std::endl;
@@ -20,14 +20,14 @@ void testGradeIncrement() {
 	std::cout << "\n=== Testing Grade Increment ===" << std::endl;
 	
 	try {
-		Bureaucrat alice("Skywalker", 5);
-		std::cout << "Before increment: " << alice << std::endl;
+		Bureaucrat skywalker("Skywalker", 5);
+		std::cout << "Before increment: " << skywalker << std::endl;
 		
-		alice.incrementGrade();
-		std::cout << "After increment: " << alice << std::endl;
+		skywalker.incrementGrade();
+		std::cout << "After increment: " << skywalker << std::endl;
 		
-		alice.incrementGrade();
-		std::cout << "After second increment: " << alice << std::endl;
+		skywalker.incrementGrade();
+		std::cout << "After second increment: " << skywalker << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cout << "Exception caught: " << e.what() << std::endl;
@@ -38,14 +38,14 @@ void testGradeDecrement() {
 	std::cout << "\n=== Testing Grade Decrement ===" << std::endl;
 	
 	try {
-		Bureaucrat bob("Anakin", 145);
-		std::cout << "Before decrement: " << bob << std::endl;
+		Bureaucrat anakin("Anakin", 145);
+		std::cout << "Before decrement: " << anakin << std::endl;
 		
-		bob.decrementGrade();
-		std::cout << "After decrement: " << bob << std::endl;
+		anakin.decrementGrade();
+		std::cout << "After decrement: " << anakin << std::endl;
 		
-		bob.decrementGrade();
-		std::cout << "After second decrement: " << bob << std::endl;
+		anakin.decrementGrade();
+		std::cout << "After second decrement: " << anakin << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cout << "Exception caught: " << e.what() << std::endl;
@@ -77,22 +77,20 @@ void testInvalidGradeConstruction() {
 void testGradeLimits() {
 	std::cout << "\n=== Testing Grade Limits ===" << std::endl;
 	
-	// Test incrementing at highest grade
 	try {
 		Bureaucrat topLevel("TopLevel", 1);
 		std::cout << "Before increment at grade 1: " << topLevel << std::endl;
-		topLevel.incrementGrade(); // This should throw
+		topLevel.incrementGrade();
 		std::cout << "After increment: " << topLevel << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	
-	// Test decrementing at lowest grade
 	try {
 		Bureaucrat bottomLevel("BottomLevel", 150);
 		std::cout << "Before decrement at grade 150: " << bottomLevel << std::endl;
-		bottomLevel.decrementGrade(); // This should throw
+		bottomLevel.decrementGrade();
 		std::cout << "After decrement: " << bottomLevel << std::endl;
 	}
 	catch (std::exception& e) {
@@ -103,7 +101,6 @@ void testGradeLimits() {
 void testOrthodoxCanonicalForm() {
 	std::cout << "\n=== Testing Orthodox Canonical Form ===" << std::endl;
 	
-	// Test copy constructor
 	try {
 		Bureaucrat original("Original", 42);
 		std::cout << "Original: " << original << std::endl;
@@ -111,7 +108,6 @@ void testOrthodoxCanonicalForm() {
 		Bureaucrat copy(original);
 		std::cout << "Copy: " << copy << std::endl;
 		
-		// Test assignment operator
 		Bureaucrat assigned("ToBeAssigned", 100);
 		std::cout << "Before assignment: " << assigned << std::endl;
 		assigned = original;
