@@ -5,7 +5,6 @@
 #include <string>
 #include <exception>
 
-// Forward declaration
 class Bureaucrat;
 
 class Form {

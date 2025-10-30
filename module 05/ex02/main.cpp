@@ -16,11 +16,9 @@ void testShrubberyCreationForm() {
 		std::cout << shrubForm << std::endl;
 		std::cout << gardener << std::endl;
 		
-		// Sign the form
 		gardener.signForm(shrubForm);
 		std::cout << "After signing: " << shrubForm << std::endl;
 		
-		// Execute the form
 		supervisor.executeForm(shrubForm);
 		
 	} catch (std::exception& e) {
@@ -38,13 +36,11 @@ void testRobotomyRequestForm() {
 		std::cout << robotForm << std::endl;
 		std::cout << engineer << std::endl;
 		
-		// Sign and execute the form
 		engineer.signForm(robotForm);
 		std::cout << "After signing: " << robotForm << std::endl;
 		
 		engineer.executeForm(robotForm);
 		
-		// Try multiple executions to see randomness
 		std::cout << "\nTrying multiple executions:" << std::endl;
 		engineer.executeForm(robotForm);
 		engineer.executeForm(robotForm);
@@ -65,7 +61,6 @@ void testPresidentialPardonForm() {
 		std::cout << pardonForm << std::endl;
 		std::cout << president << std::endl;
 		
-		// Sign and execute the form
 		president.signForm(pardonForm);
 		std::cout << "After signing: " << pardonForm << std::endl;
 		
@@ -171,18 +166,15 @@ void testOrthodoxCanonicalForm() {
 	std::cout << "\n=== Testing Orthodox Canonical Form ===" << std::endl;
 	
 	try {
-		// Test copy constructor and assignment operator
 		ShrubberyCreationForm original("original");
 		Bureaucrat signer("Signer", 100);
 		
 		signer.signForm(original);
 		std::cout << "Original: " << original << std::endl;
 		
-		// Test copy constructor
 		ShrubberyCreationForm copy(original);
 		std::cout << "Copy: " << copy << std::endl;
 		
-		// Test assignment operator
 		ShrubberyCreationForm assigned("to_be_assigned");
 		std::cout << "Before assignment: " << assigned << std::endl;
 		assigned = original;

@@ -55,7 +55,6 @@ void testGradeDecrement() {
 void testInvalidGradeConstruction() {
 	std::cout << "\n=== Testing Invalid Grade Construction ===" << std::endl;
 	
-	// Test grade too high
 	try {
 		Bureaucrat invalidHigh("TooHigh", 0);
 		std::cout << invalidHigh << std::endl;
@@ -64,7 +63,6 @@ void testInvalidGradeConstruction() {
 		std::cout << "Exception caught for grade 0: " << e.what() << std::endl;
 	}
 	
-	// Test grade too low
 	try {
 		Bureaucrat invalidLow("TooLow", 151);
 		std::cout << invalidLow << std::endl;
