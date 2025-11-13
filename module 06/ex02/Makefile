@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
-TARGET = conv
+TARGET = base
 
 SRCS = main.cpp Base.cpp
 INCLUDES = Base.hpp

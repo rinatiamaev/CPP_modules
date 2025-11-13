@@ -152,7 +152,9 @@ void ScalarConverter::convertFromFloat(float value)
 	else
 		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 	
-	if (std::isnan(value) || std::isinf(value) || value < INT_MIN || value > INT_MAX)
+	// Integer output
+	if (std::isnan(value) || std::isinf(value) || 
+		value < static_cast<float>(INT_MIN) || value > static_cast<float>(INT_MAX))
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(value) << std::endl;
@@ -191,7 +193,9 @@ void ScalarConverter::convertFromDouble(double value)
 	else
 		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 	
-	if (std::isnan(value) || std::isinf(value) || value < INT_MIN || value > INT_MAX)
+	// Integer output
+	if (std::isnan(value) || std::isinf(value) || 
+		value < static_cast<double>(INT_MIN) || value > static_cast<double>(INT_MAX))
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(value) << std::endl;
