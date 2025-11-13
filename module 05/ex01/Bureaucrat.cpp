@@ -65,11 +65,11 @@ void Bureaucrat::_validateGrade(int grade) {
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade is too high! (minimum grade is 1)";
+	return "Grade is too high! (maximum grade is 1)";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return "Grade is too low! (maximum grade is 150)";
+	return "Grade is too low! (minimum grade is 150)";
 }
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat) {

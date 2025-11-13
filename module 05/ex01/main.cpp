@@ -22,7 +22,6 @@ void testBasicFormFunctionality() {
 void testInvalidFormGrades() {
 	std::cout << "\n=== Testing Invalid Form Grades ===" << std::endl;
 	
-	// Test grade too high for signing
 	try {
 		Form invalidForm1("Invalid Form 1", 0, 50);
 		std::cout << invalidForm1 << std::endl;
@@ -30,8 +29,6 @@ void testInvalidFormGrades() {
 	catch (std::exception& e) {
 		std::cout << "Exception caught for grade to sign 0: " << e.what() << std::endl;
 	}
-	
-	// Test grade too low for execution
 	try {
 		Form invalidForm2("Invalid Form 2", 50, 151);
 		std::cout << invalidForm2 << std::endl;
@@ -94,12 +91,10 @@ void testMultipleSigning() {
 		std::cout << "Initial state:" << std::endl;
 		std::cout << contractForm << std::endl;
 		
-		// First signing
 		supervisor.signForm(contractForm);
 		std::cout << "After first signing:" << std::endl;
 		std::cout << contractForm << std::endl;
 		
-		// Second signing (should still work)
 		director.signForm(contractForm);
 		std::cout << "After second signing:" << std::endl;
 		std::cout << contractForm << std::endl;
@@ -113,7 +108,6 @@ void testBoundaryGrades() {
 	std::cout << "\n=== Testing Boundary Grades ===" << std::endl;
 	
 	try {
-		// Form with highest possible grades
 		Form highForm("High Security Form", 1, 1);
 		Bureaucrat topBureaucrat("Top Bureaucrat", 1);
 		
@@ -130,7 +124,6 @@ void testBoundaryGrades() {
 	}
 	
 	try {
-		// Form with lowest possible grades
 		Form lowForm("Basic Form", 150, 150);
 		Bureaucrat basicBureaucrat("Basic Bureaucrat", 150);
 		
@@ -154,15 +147,12 @@ void testOrthodoxCanonicalForm() {
 		Form original("Original Form", 42, 24);
 		Bureaucrat signer("Signer", 30);
 		
-		// Sign the original
 		signer.signForm(original);
 		std::cout << "Original: " << original << std::endl;
 		
-		// Test copy constructor
 		Form copy(original);
 		std::cout << "Copy: " << copy << std::endl;
 		
-		// Test assignment operator
 		Form assigned("To Be Assigned", 100, 80);
 		std::cout << "Before assignment: " << assigned << std::endl;
 		assigned = original;

@@ -56,19 +56,19 @@ void testInvalidGradeConstruction() {
 	std::cout << "\n=== Testing Invalid Grade Construction ===" << std::endl;
 	
 	try {
-		Bureaucrat invalidHigh("TooHigh", 0);
+		Bureaucrat invalidHigh("TooHigh", 151);
 		std::cout << invalidHigh << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cout << "Exception caught for grade 0: " << e.what() << std::endl;
+		std::cout << "Exception caught for grade 151: " << e.what() << std::endl;
 	}
 	
 	try {
-		Bureaucrat invalidLow("TooLow", 151);
+		Bureaucrat invalidLow("TooLow", 0);
 		std::cout << invalidLow << std::endl;
 	}
 	catch (std::exception& e) {
-		std::cout << "Exception caught for grade 151: " << e.what() << std::endl;
+		std::cout << "Exception caught for grade 0: " << e.what() << std::endl;
 	}
 }
 

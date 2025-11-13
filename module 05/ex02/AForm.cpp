@@ -72,11 +72,11 @@ void AForm::_validateGrade(int grade) {
 }
 
 const char* AForm::GradeTooHighException::what() const throw() {
-	return "Form grade is too high! (minimum grade is 1)";
+	return "Form grade is too high! (maximum grade is 1)";
 }
 
 const char* AForm::GradeTooLowException::what() const throw() {
-	return "Form grade is too low! (maximum grade is 150)";
+	return "Form grade is too low! (minimum grade is 150)";
 }
 
 const char* AForm::FormNotSignedException::what() const throw() {
