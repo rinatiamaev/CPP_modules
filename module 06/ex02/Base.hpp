@@ -19,7 +19,6 @@ class C : public Base
 {
 };
 
-// Function declarations
 Base* generate(void);
 void identify(Base* p);
 void identify(Base& p);

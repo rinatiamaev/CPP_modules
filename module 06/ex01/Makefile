@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
-TARGET = serialaze
+TARGET = serialize
 
 SRCS = main.cpp Serializer.cpp Data.cpp
 INCLUDES = Serializer.hpp Data.hpp

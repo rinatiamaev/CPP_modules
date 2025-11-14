@@ -10,7 +10,7 @@ Base::~Base()
 
 Base* generate(void)
 {
-	// Seed random number generator (only once)
+	// Seed random number generator
 	static bool seeded = false;
 	if (!seeded)
 	{
@@ -41,7 +41,7 @@ void identify(Base* p)
 		return;
 	}
 	
-	// Try dynamic_cast to each type
+	// dynamic_cast to each type
 	if (dynamic_cast<A*>(p))
 		std::cout << "A" << std::endl;
 	else if (dynamic_cast<B*>(p))
@@ -61,37 +61,34 @@ void identify(Base& p)
 	try
 	{
 		A& a = dynamic_cast<A&>(p);
-		(void)a; // Suppress unused variable warning
+		(void)a; 
 		std::cout << "A" << std::endl;
 		return;
 	}
 	catch (const std::exception&)
 	{
-		// Not type A, continue
 	}
 	
 	try
 	{
 		B& b = dynamic_cast<B&>(p);
-		(void)b; // Suppress unused variable warning
+		(void)b;
 		std::cout << "B" << std::endl;
 		return;
 	}
 	catch (const std::exception&)
 	{
-		// Not type B, continue
 	}
 	
 	try
 	{
 		C& c = dynamic_cast<C&>(p);
-		(void)c; // Suppress unused variable warning
+		(void)c; 
 		std::cout << "C" << std::endl;
 		return;
 	}
 	catch (const std::exception&)
 	{
-		// Not type C
 		std::cout << "Unknown type" << std::endl;
 	}
 }

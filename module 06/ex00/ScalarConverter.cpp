@@ -2,7 +2,6 @@
 #include <sstream>
 #include <cstdlib>
 
-// Private constructor - class cannot be instantiated
 ScalarConverter::ScalarConverter() {}
 ScalarConverter::ScalarConverter(const ScalarConverter& other) { (void)other; }
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) { (void)other; return *this; }
@@ -10,12 +9,11 @@ ScalarConverter::~ScalarConverter() {}
 
 bool ScalarConverter::isChar(const std::string& str)
 {
-	// Check for quoted character format: 'c'
+	// Check for quoted char
 	if (str.length() == 3 && str[0] == '\'' && str[2] == '\'')
 		return true;
 	
-	// Check for single character (when shell removes quotes)
-	// But exclude digits to avoid conflict with integers
+	// Check for single char
 	if (str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0]))
 		return true;
 	
@@ -152,7 +150,6 @@ void ScalarConverter::convertFromFloat(float value)
 	else
 		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
 	
-	// Integer output
 	if (std::isnan(value) || std::isinf(value) || 
 		value < static_cast<float>(INT_MIN) || value > static_cast<float>(INT_MAX))
 		std::cout << "int: impossible" << std::endl;

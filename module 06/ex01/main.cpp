@@ -8,7 +8,6 @@ int main()
 	std::cout << "=== Serialization Test Program ===" << std::endl;
 	std::cout << std::endl;
 	
-	// Create a Data object
 	Data originalData(42, "TestObject", 3.14f, true);
 	
 	std::cout << "1. Original Data object:" << std::endl;
@@ -34,18 +33,17 @@ int main()
 	std::cout << "   Content: ";
 	deserializedPtr->display();
 	std::cout << std::endl;
-	
-	// Verify the pointers are equal
+
 	std::cout << "4. Verification:" << std::endl;
 	std::cout << "   Original pointer == Deserialized pointer: " 
-			<< ((&originalData == deserializedPtr) ? "✓ TRUE" : "✗ FALSE") << std::endl;
+			<< ((&originalData == deserializedPtr) ? " TRUE" : " FALSE") << std::endl;
 	
-	// Verify the data is accessible and correct
+	// Verify data is accessible and correct
 	std::cout << "   Data integrity check: "
-			<< ((originalData == *deserializedPtr) ? "✓ TRUE" : "✗ FALSE") << std::endl;
+			<< ((originalData == *deserializedPtr) ? " TRUE" : " FALSE") << std::endl;
 	std::cout << std::endl;
 	
-	// Additional test with different data
+	// Additional test with another data
 	std::cout << "5. Additional test with different data:" << std::endl;
 	Data secondData(100, "SecondTest", -2.5f, false);
 	std::cout << "   Second data: ";
@@ -55,9 +53,9 @@ int main()
 	Data* deserialized2 = Serializer::deserialize(serialized2);
 	
 	std::cout << "   Pointer equality: " 
-			<< ((&secondData == deserialized2) ? "✓ TRUE" : "✗ FALSE") << std::endl;
+			<< ((&secondData == deserialized2) ? " TRUE" : " FALSE") << std::endl;
 	std::cout << "   Data integrity: "
-			<< ((secondData == *deserialized2) ? "✓ TRUE" : "✗ FALSE") << std::endl;
+			<< ((secondData == *deserialized2) ? " TRUE" : " FALSE") << std::endl;
 	std::cout << std::endl;
 	
 	// Test with null pointer
@@ -70,7 +68,7 @@ int main()
 	std::cout << "   Serialized null: " << serializedNull << std::endl;
 	std::cout << "   Deserialized null: " << deserializedNull << std::endl;
 	std::cout << "   Null pointer equality: " 
-			<< ((nullPtr == deserializedNull) ? "✓ TRUE" : "✗ FALSE") << std::endl;
+			<< ((nullPtr == deserializedNull) ? " TRUE" : " FALSE") << std::endl;
 	
 	std::cout << std::endl;
 	std::cout << "=== All tests completed ===" << std::endl;
