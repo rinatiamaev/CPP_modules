@@ -37,7 +37,7 @@ int main() {
 	std::cout << "\n----- String Array Test -----\n";
 	Array<std::string> s(3);
 	s[0] = "Hello";
-	s[1] = "C++11";
+	s[1] = "HIVE";
 	s[2] = "World";
 
 	for (unsigned int i = 0; i < s.size(); i++)

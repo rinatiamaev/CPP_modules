@@ -5,15 +5,18 @@ template <typename T>
 Array<T>::Array() noexcept : _data(nullptr), _size(0) {}
 
 template <typename T>
-Array<T>::Array(unsigned int n) : _data(nullptr), _size(n) {
-	_data = new T[n]();
+Array<T>::Array(unsigned int n) : _data(new T[n]()), _size(n) {} // allocate directly
+
+template <typename T>
+Array<T>::Array(const Array& other) : _data(new T[other._size]), _size(other._size) {
+	for (unsigned int i = 0; i < _size; ++i)
+		_data[i] = other._data[i];
 }
 
 template <typename T>
-Array<T>::Array(const Array& other) : _data(nullptr), _size(other._size) {
-	_data = new T[_size];
-	for (unsigned int i = 0; i < _size; ++i)
-		_data[i] = other._data[i];
+Array<T>::Array(Array&& other) noexcept : _data(other._data), _size(other._size) {
+	other._data = nullptr;
+	other._size = 0;
 }
 
 template <typename T>
@@ -27,6 +30,20 @@ Array<T>& Array<T>::operator=(const Array& other) {
 
 		_data = newData;
 		_size = other._size;
+	}
+	return *this;
+}
+
+template <typename T>
+Array<T>& Array<T>::operator=(Array&& other) noexcept {
+	if (this != &other) {
+		delete[] _data;
+
+		_data = other._data;
+		_size = other._size;
+
+		other._data = nullptr;
+		other._size = 0;
 	}
 	return *this;
 }
