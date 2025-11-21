@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++11
 TARGET = array
 
 SRCS = main.cpp
-INCLUDES = array.hpp
+INCLUDES = Array.hpp
 
 OBJSDIR = objects
 OBJS = $(addprefix $(OBJSDIR)/,$(SRCS:.cpp=.o))

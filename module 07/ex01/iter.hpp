@@ -1,7 +1,7 @@
 #ifndef ITER_HPP
 #define ITER_HPP
 
-#include <cstddef> // for size_t
+#include <cstddef>
 
 template <typename T>
 void iter(T *array, size_t length, void (*func)(T &)) {

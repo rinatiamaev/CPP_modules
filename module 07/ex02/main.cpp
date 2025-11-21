@@ -1,5 +1,5 @@
 #include <iostream>
-#include "array.hpp"
+#include "Array.hpp"
 
 int main() {
 	std::cout << "----- Basic Tests -----\n";

@@ -13,7 +13,6 @@ void increment(T &x) {
 }
 
 int main() {
-	// ----- INT ARRAY -----
 	int intArray[5] = {1, 2, 3, 4, 5};
 
 	std::cout << "Print integers:" << std::endl;
@@ -23,15 +22,12 @@ int main() {
 	iter(intArray, 5, increment<int>);
 	iter(intArray, 5, printElement<int>);
 
-
-	// ----- STRING ARRAY -----
 	std::string strArray[3] = {"Hello", "World", "!"};
 
 	std::cout << "\nPrint strings:" << std::endl;
 	iter(strArray, 3, printElement<std::string>);
 
 
-	// ----- CHAR ARRAY -----
 	char charArray[4] = {'A', 'B', 'C', 'D'};
 
 	std::cout << "\nPrint chars:" << std::endl;
