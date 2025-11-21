@@ -10,7 +10,6 @@ Base::~Base()
 
 Base* generate(void)
 {
-	// Seed random number generator
 	static bool seeded = false;
 	if (!seeded)
 	{
@@ -41,7 +40,6 @@ void identify(Base* p)
 		return;
 	}
 	
-	// dynamic_cast to each type
 	if (dynamic_cast<A*>(p))
 		std::cout << "A" << std::endl;
 	else if (dynamic_cast<B*>(p))

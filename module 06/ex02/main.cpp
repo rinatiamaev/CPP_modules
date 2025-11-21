@@ -7,7 +7,6 @@ int main()
 	std::cout << "=== Real Type Identification Test ===" << std::endl;
 	std::cout << std::endl;
 	
-	// Test 1: Random generation and identification
 	std::cout << "Test 1: Random generation and identification" << std::endl;
 	std::cout << "--------------------------------------------" << std::endl;
 	
@@ -27,7 +26,6 @@ int main()
 		std::cout << std::endl;
 	}
 	
-	// Test 2: Specific type creation and identification
 	std::cout << "Test 2: Specific type creation and identification" << std::endl;
 	std::cout << "------------------------------------------------" << std::endl;
 	
@@ -58,7 +56,6 @@ int main()
 	
 	std::cout << std::endl;
 	
-	// Test 3: Polymorphic behavior through Base pointers
 	std::cout << "Test 3: Polymorphic behavior through Base pointers" << std::endl;
 	std::cout << "--------------------------------------------------" << std::endl;
 	
@@ -89,7 +86,6 @@ int main()
 	
 	std::cout << std::endl;
 	
-	// Test 4: NULL pointer handling
 	std::cout << "Test 4: NULL pointer handling" << std::endl;
 	std::cout << "-----------------------------" << std::endl;
 	Base* nullPtr = NULL;
@@ -97,7 +93,6 @@ int main()
 	identify(nullPtr);
 	std::cout << std::endl;
 	
-	// Test 5: Array of Base pointers
 	std::cout << "Test 5: Array of Base pointers with mixed types" << std::endl;
 	std::cout << "-----------------------------------------------" << std::endl;
 	
@@ -114,7 +109,6 @@ int main()
 		identify(objects[i]);
 	}
 	
-	// Cleanup
 	delete directA;
 	delete directB;
 	delete directC;

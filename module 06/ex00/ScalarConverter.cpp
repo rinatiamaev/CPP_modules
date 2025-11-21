@@ -189,8 +189,7 @@ void ScalarConverter::convertFromDouble(double value)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
-	
-	// Integer output
+
 	if (std::isnan(value) || std::isinf(value) || 
 		value < static_cast<double>(INT_MIN) || value > static_cast<double>(INT_MAX))
 		std::cout << "int: impossible" << std::endl;

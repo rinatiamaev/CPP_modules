@@ -16,7 +16,6 @@ int main()
 	originalData.display();
 	std::cout << std::endl;
 	
-	// Serialize the Data pointer
 	uintptr_t serializedPtr = Serializer::serialize(&originalData);
 	
 	std::cout << "2. Serialization:" << std::endl;
@@ -25,7 +24,6 @@ int main()
 	std::cout << "   Serialized value (decimal): " << serializedPtr << std::endl;
 	std::cout << std::endl;
 	
-	// Deserialize back to pointer
 	Data* deserializedPtr = Serializer::deserialize(serializedPtr);
 	
 	std::cout << "3. Deserialization:" << std::endl;
@@ -38,12 +36,10 @@ int main()
 	std::cout << "   Original pointer == Deserialized pointer: " 
 			<< ((&originalData == deserializedPtr) ? " TRUE" : " FALSE") << std::endl;
 	
-	// Verify data is accessible and correct
 	std::cout << "   Data integrity check: "
 			<< ((originalData == *deserializedPtr) ? " TRUE" : " FALSE") << std::endl;
 	std::cout << std::endl;
 	
-	// Additional test with another data
 	std::cout << "5. Additional test with different data:" << std::endl;
 	Data secondData(100, "SecondTest", -2.5f, false);
 	std::cout << "   Second data: ";
@@ -57,8 +53,7 @@ int main()
 	std::cout << "   Data integrity: "
 			<< ((secondData == *deserialized2) ? " TRUE" : " FALSE") << std::endl;
 	std::cout << std::endl;
-	
-	// Test with null pointer
+
 	std::cout << "6. Null pointer test:" << std::endl;
 	Data* nullPtr = NULL;
 	uintptr_t serializedNull = Serializer::serialize(nullPtr);
