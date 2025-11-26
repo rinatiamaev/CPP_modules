@@ -6,7 +6,6 @@
 int main()
 {
 	try {
-		// small test
 		Span sp(5);
 		sp.addNumber(6);
 		sp.addNumber(3);
@@ -16,17 +15,14 @@ int main()
 		std::cout << "shortestSpan: " << sp.shortestSpan() << '\n';
 		std::cout << "longestSpan : " << sp.longestSpan() << '\n';
 
-		// test addRange and exception when exceeding
 		Span sp2(10000);
 		std::vector<int> batch;
 		batch.reserve(10000);
 		for (int i = 0; i < 10000; ++i)
-			batch.push_back(i * 2); // predictable values
+			batch.push_back(i * 2);
 		sp2.addRange(batch.begin(), batch.end());
 		std::cout << "sp2 size: " << sp2.size() << ", shortest: " << sp2.shortestSpan()
 				<< ", longest: " << sp2.longestSpan() << '\n';
-
-		// random large test
 		Span sp3(10000);
 		std::srand(static_cast<unsigned int>(std::time(NULL)));
 		for (int i = 0; i < 10000; ++i)
@@ -34,9 +30,8 @@ int main()
 		std::cout << "sp3 populated with 10000 random numbers -> shortest: "
 				<< sp3.shortestSpan() << ", longest: " << sp3.longestSpan() << '\n';
 
-		// attempt overflow
 		try {
-			sp.addNumber(42); // should throw (sp has capacity 5)
+			sp.addNumber(42);
 		} catch (const std::exception& e) {
 			std::cout << "expected exception: " << e.what() << '\n';
 		}

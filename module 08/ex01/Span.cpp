@@ -35,7 +35,7 @@ void Span::addNumber(int n)
 	_vec.push_back(n);
 }
 
-int Span::shortestSpan() const
+long long Span::shortestSpan() const
 {
 	if (_vec.size() < 2)
 		throw std::length_error("Span::shortestSpan not enough elements");
@@ -46,20 +46,17 @@ int Span::shortestSpan() const
 	long long minDist = std::numeric_limits<long long>::max();
 	for (std::size_t i = 1; i < tmp.size(); ++i) {
 		long long diff = static_cast<long long>(tmp[i]) - static_cast<long long>(tmp[i - 1]);
-		if (diff < 0) diff = -diff;
 		if (diff < minDist) minDist = diff;
 	}
-	return static_cast<int>(minDist);
+	return minDist;
 }
 
-int Span::longestSpan() const
+long long Span::longestSpan() const
 {
 	if (_vec.size() < 2)
 		throw std::length_error("Span::longestSpan not enough elements");
 	auto mm = std::minmax_element(_vec.begin(), _vec.end());
-	long long diff = static_cast<long long>(*mm.second) - static_cast<long long>(*mm.first);
-	if (diff < 0) diff = -diff;
-	return static_cast<int>(diff);
+	return static_cast<long long>(*mm.second) - static_cast<long long>(*mm.first);
 }
 
 void Span::printValues() const

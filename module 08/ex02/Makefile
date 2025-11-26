@@ -1,31 +1,30 @@
-CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++17
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++11
+TARGET = mut
 
-NAME	= mutant
+SRCS = main.cpp MutantStack.cpp
+INCLUDES = MutantStack.hpp
 
-SRC		=	main.cpp
-OBJ		= $(SRC:.cpp=.o)
+OBJSDIR = objects
+OBJS = $(addprefix $(OBJSDIR)/,$(SRCS:.cpp=.o))
 
-all: $(NAME)
+all: $(TARGET)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $^ -o $@
+$(OBJSDIR):
+	mkdir $(OBJSDIR)
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $^ -o $@
+$(TARGET): $(OBJSDIR) $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+
+$(OBJSDIR)/%.o: %.cpp $(INCLUDES)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJSDIR)
 
 fclean: clean
-	rm -f $(NAME)
-
-start: all clean
-	./$(NAME) $(filter-out $@,$(MAKECMDGOALS))
-
-%:
-	@:
+	rm -f $(TARGET)
 
 re: fclean all
 
-.PHONY: all clean fclean re start
+.PHONY: all clean fclean re

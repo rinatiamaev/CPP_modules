@@ -15,15 +15,18 @@ public:
 	Span();
 	~Span();
 	Span(const Span& other);
+	Span(Span&&) = default;                // add move ctor
 	Span& operator=(const Span& other);
+	Span& operator=(Span&&) = default;     // add move assign
 
 	void addNumber(int n);
+	void addNumber(std::initializer_list<int> il); // convenience
 
 	template<typename InputIt>
-	void addRange(InputIt first, InputIt last);
+	void addRange(InputIt first, InputIt last);   // inline template below
 
-	int shortestSpan() const;
-	int longestSpan() const;
+	long long shortestSpan() const;   // bigger signed type
+	long long longestSpan()  const;
 
 	void printValues() const;
 
@@ -35,6 +38,7 @@ private:
 	std::size_t _cap;
 };
 
+// Inline template implementation (no separate .inl needed)
 template<typename InputIt>
 void Span::addRange(InputIt first, InputIt last)
 {
@@ -42,5 +46,10 @@ void Span::addRange(InputIt first, InputIt last)
 	if (_vec.size() + addCount > _cap)
 		throw std::length_error("Span::addRange would exceed capacity");
 	_vec.insert(_vec.end(), first, last);
+}
+
+inline void Span::addNumber(std::initializer_list<int> il)
+{
+	addRange(il.begin(), il.end());
 }
 #endif
