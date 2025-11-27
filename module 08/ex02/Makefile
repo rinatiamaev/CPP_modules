@@ -2,7 +2,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++11
 TARGET = mut
 
-SRCS = main.cpp MutantStack.cpp
+SRCS = main.cpp
 INCLUDES = MutantStack.hpp
 
 OBJSDIR = objects

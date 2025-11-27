@@ -1,23 +1,24 @@
 #include "Span.hpp"
 
-Span::Span(unsigned int N)
-	: _vec()
-	, _cap(static_cast<std::size_t>(N))
+Span::Span(unsigned int N): _vec(), _cap(static_cast<std::size_t>(N))
 {
 	_vec.reserve(_cap);
 }
 
-Span::Span()
-	: _vec()
-	, _cap(0)
-{}
+Span::Span(): _vec(), _cap(0)
+{
 
-Span::~Span() {}
+}
 
-Span::Span(const Span& other)
-	: _vec(other._vec)
-	, _cap(other._cap)
-{}
+Span::~Span()
+{
+
+}
+
+Span::Span(const Span& other): _vec(other._vec), _cap(other._cap)
+{
+	
+}
 
 Span& Span::operator=(const Span& other)
 {
@@ -64,4 +65,9 @@ void Span::printValues() const
 	for (std::size_t i = 0; i < _vec.size(); ++i)
 		std::cout << _vec[i] << " ";
 	std::cout << std::endl;
+}
+
+void Span::addNumber(std::initializer_list<int> il)
+{
+	addRange(il.begin(), il.end());
 }
