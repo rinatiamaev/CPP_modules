@@ -41,8 +41,7 @@ public:
 	void printResult(char **av);
 
 	template <typename It>
-	bool isSorted(It begin, It end)
-	{
+	bool isSorted(It begin, It end){
 		for (auto last = *begin; begin != end; ++begin)
 		{
 			if (last > *begin)

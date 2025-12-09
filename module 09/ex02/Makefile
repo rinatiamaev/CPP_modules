@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++20
-TARGET = pmerge
+TARGET = PmergeMe
 
 SRCS = main.cpp PmergeMe.cpp
 INCLUDES = PmergeMe.hpp

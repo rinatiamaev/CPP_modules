@@ -1,6 +1,5 @@
 #include "PmergeMe.hpp"
 
-// ====================== Assignment operator ======================
 PmergeMe& PmergeMe::operator=(const PmergeMe &other)
 {
 	if (this == &other)
@@ -12,7 +11,6 @@ PmergeMe& PmergeMe::operator=(const PmergeMe &other)
 	return *this;
 }
 
-// ====================== Parse input ======================
 void PmergeMe::parseInput(char **av)
 {
 	for (int i = 1; av[i]; ++i)
@@ -29,7 +27,6 @@ void PmergeMe::parseInput(char **av)
 	_deq = std::deque<int>(_vec.begin(), _vec.end());
 }
 
-// ====================== Insert / Sort Templates ======================
 template <typename Container>
 void PmergeMe::insertInContainer(Container &cont, int pair_size)
 {
@@ -115,7 +112,6 @@ void PmergeMe::sortContainer(Container &cont, int pair_size, std::chrono::micros
 	time = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 }
 
-// ====================== Sort Vector / Deque ======================
 void PmergeMe::sortVector(int pair_size)
 {
 	sortContainer(_vec, pair_size, _vecTime);
@@ -126,7 +122,6 @@ void PmergeMe::sortDeq(int pair_size)
 	sortContainer(_deq, pair_size, _deqTime);
 }
 
-// ====================== Print result ======================
 template <typename Container>
 void PmergeMe::printContainer(const Container &cont, const std::string &name, std::chrono::microseconds time)
 {

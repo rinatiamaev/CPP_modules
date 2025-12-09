@@ -35,6 +35,8 @@ Ymd BitcoinExchange::convertStrToDate(const std::string& date)
 		std::chrono::month{static_cast<unsigned>(tm.tm_mon + 1)} ,
 		std::chrono::day{static_cast<unsigned>(tm.tm_mday)} ,
 	};
+	if (!ymd.ok())
+		throw std::runtime_error("bad date");
 	return ymd;
 }
 

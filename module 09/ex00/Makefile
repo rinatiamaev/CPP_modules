@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++20
-TARGET = span
+TARGET = btc
 
 SRCS = main.cpp BitcoinExchange.cpp
 INCLUDES = BitcoinExchange.hpp
